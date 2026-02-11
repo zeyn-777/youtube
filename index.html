@@ -3,40 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZE YOTUBE | REAL</title>
+    
+    <title>AZE YOTUBE | RƏSMİ</title>
+    <meta name="description" content="AZE YOTUBE - AZEPRO tərəfindən hazırlanmış Azərbaycanın ən yeni video platforması. Gündəlik ən yeni videolar, trendlər və musiqilər. İndi APK yüklə!">
+    <meta name="keywords" content="aze tube, azerbaycan video, azepro, yeni videolar, youtube apk, trend videolar, azeri mahnilar">
+    <meta name="author" content="AZEPRO">
+    
+    <link rel="icon" href="https://zeyn-777.github.io/youtube/Screenshot_20260212_014451_Google.jpg">
+    
+    <meta property="og:title" content="AZE YOTUBE | YENİ VİDEOLAR">
+    <meta property="og:description" content="Azərbaycanın ən yeni videoları hər gün burada. APK yüklə!">
+    <meta property="og:image" content="https://zeyn-777.github.io/youtube/Screenshot_20260212_014451_Google.jpg">
+
     <style>
-        body { margin: 0; background-color: #0f0f0f; color: white; font-family: sans-serif; padding-bottom: 200px; }
-        .header { padding: 15px; position: sticky; top: 0; z-index: 100; background: linear-gradient(270deg, #00B5E2, #EF3340, #509E2F); background-size: 400% 400%; animation: bayraq 6s ease infinite; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid white; }
+        body { margin: 0; background-color: #0f0f0f; color: white; font-family: sans-serif; padding-bottom: 220px; }
+        
+        /* Hərəkətli Bayraq Fonu */
+        .header, .footer { 
+            background: linear-gradient(270deg, #00B5E2, #EF3340, #509E2F); 
+            background-size: 400% 400%; 
+            animation: bayraq 6s ease infinite; 
+        }
         @keyframes bayraq { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-        .search-area { padding: 10px; background: #202020; display: flex; gap: 5px; }
-        input { flex: 1; padding: 10px; border-radius: 5px; border: none; background: #333; color: white; }
-        button { padding: 10px; background: #EF3340; color: white; border: none; border-radius: 5px; font-weight: bold; }
-        .v-card { margin-bottom: 15px; background: #1e1e1e; border-radius: 10px; overflow: hidden; cursor: pointer;}
+
+        .header { 
+            padding: 10px 15px; 
+            position: sticky; top: 0; z-index: 100; 
+            display: flex; align-items: center; justify-content: space-between; 
+            border-bottom: 2px solid white; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+        
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-img { 
+            width: 45px; height: 45px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 2px solid white; 
+        }
+
+        /* APK Düyməsi */
+        .apk-box { padding: 15px; text-align: center; background: #1a1a1a; border-bottom: 1px solid #333; }
+        .apk-btn {
+            display: block;
+            background: #25D366; 
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 16px;
+            animation: pulse 1.5s infinite;
+            border: 1px solid #128C7E;
+            text-transform: uppercase;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(37, 211, 102, 0.6); }
+            100% { transform: scale(1); }
+        }
+
+        .search-area { padding: 15px 10px; background: #202020; display: flex; gap: 8px; }
+        input { flex: 1; padding: 12px; border-radius: 8px; border: none; background: #333; color: white; font-size: 14px; }
+        button { padding: 12px 20px; background: #EF3340; color: white; border: none; border-radius: 8px; font-weight: bold; }
+        
+        .v-card { margin: 10px; background: #1e1e1e; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid #333; position: relative; }
         .v-thumb { width: 100%; height: 210px; object-fit: cover; }
-        .v-info { padding: 10px; }
+        .v-info { padding: 12px; }
         .v-title { font-weight: bold; font-size: 15px; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .footer { position: fixed; bottom: 0; width: 100%; text-align: center; padding: 20px 0; background: linear-gradient(270deg, #00B5E2, #EF3340, #509E2F); animation: bayraq 6s ease infinite; border-top: 2px solid white; }
+        .new-badge { position: absolute; top: 10px; right: 10px; background: red; color: white; padding: 3px 8px; font-size: 10px; border-radius: 4px; font-weight: bold; }
+
+        /* Footer və Əlaqə */
+        .footer { position: fixed; bottom: 0; width: 100%; text-align: center; padding: 15px 0; border-top: 2px solid white; z-index: 90; }
+        .btn-link { 
+            display: inline-flex; align-items: center; gap: 5px;
+            color: white; text-decoration: none; 
+            margin: 5px; font-weight: bold; border: 1px solid white; 
+            padding: 8px 18px; border-radius: 25px; background: rgba(0,0,0,0.4); font-size: 12px;
+        }
+
         .player { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; display: none; z-index: 2000; flex-direction: column; justify-content: center; }
-        .close-p { padding: 15px; background: red; color: white; text-align: center; font-weight: bold; cursor: pointer; }
+        .close-p { padding: 15px; background: #EF3340; color: white; text-align: center; font-weight: bold; cursor: pointer; border-bottom: 1px solid white; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div style="font-weight:bold; font-size: 20px;">AZE YOTUBE</div>
-        <div style="font-size: 10px; background:white; color:black; padding:2px;">AZEPRO</div>
+        <div class="logo-box">
+            <img src="https://zeyn-777.github.io/youtube/Screenshot_20260212_014451_Google.jpg" class="logo-img" alt="Logo">
+            <div style="font-weight:900; font-size: 20px; text-shadow: 2px 2px 4px black; letter-spacing: 1px;">AZE YOTUBE</div>
+        </div>
+        <div style="font-size: 10px; background:white; color:black; padding:4px 8px; border-radius: 6px; font-weight: bold;">YENİ</div>
+    </div>
+
+    <div class="apk-box">
+        <a href="https://zeyn-777.github.io/youtube/app-release.apk" class="apk-btn">
+            📲 AZE YOTUBE APK YÜKLƏ
+        </a>
     </div>
 
     <div class="search-area">
-        <input type="text" id="q" placeholder="Video axtar...">
+        <input type="text" id="q" placeholder="Video axtar (Məs: Xəbərlər)...">
         <button onclick="ara()">AXTAR</button>
     </div>
 
     <div id="list"></div>
 
     <div class="footer">
-        <div id="saat" style="font-weight: bold; color: yellow;">00:00:00</div>
-        <div style="font-size: 11px; margin-top: 5px;">MÜƏLLİF: AZEPRO | BÜTÜN HÜQUQLAR QORUNUR</div>
+        <div id="saat" style="font-weight: bold; color: yellow; margin-bottom: 8px; font-size: 16px;">00:00:00</div>
+        
+        <div>
+            <a href="mailto:azeproofficial@gmail.com" class="btn-link">📧 GMAIL</a>
+            <a href="https://t.me/Aze_Pro_Official" class="btn-link">✈️ TELEGRAM</a>
+        </div>
+
+        <div style="font-size: 10px; margin-top: 10px; font-weight: bold; opacity: 0.9;">
+            MÜƏLLİF: AZEPRO | BÜTÜN HÜQUQLAR QORUNUR © 2026
+        </div>
     </div>
 
     <div id="screen" class="player">
@@ -45,28 +128,33 @@
     </div>
 
     <script>
-        // SENİN API AÇARIN BURADA:
+        // AZEPRO API KEY
         const KEY = 'AIzaSyB7C2O7EAaR0O5g-s7CKY2xOHjE23WgEWI'; 
 
         async function ara() {
-            const soz = document.getElementById('q').value || 'Azerbaijan trends';
+            const soz = document.getElementById('q').value || 'Azərbaycan 2026';
             try {
-                const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${soz}&type=video&key=${KEY}`);
+                // order=date (YENİLƏRƏ GÖRƏ SIRALAMA)
+                const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${soz}&regionCode=AZ&type=video&order=date&key=${KEY}`);
                 const data = await res.json();
                 
                 if(data.error) {
-                    alert("Xəta baş verdi: " + data.error.message);
+                    alert("Xəta: " + data.error.message);
                     return;
                 }
 
                 let html = '';
                 data.items.forEach(v => {
+                    // Tarixi formatlamaq (Məs: Bu gün)
+                    const date = new Date(v.snippet.publishedAt).toLocaleDateString('az-AZ');
+                    
                     html += `
                     <div class="v-card" onclick="ac('${v.id.videoId}')">
-                        <img src="${v.snippet.thumbnails.high.url}" class="v-thumb">
+                        <div class="new-badge">YENİ • ${date}</div>
+                        <img src="${v.snippet.thumbnails.high.url}" class="v-thumb" alt="${v.snippet.title}">
                         <div class="v-info">
                             <div class="v-title">${v.snippet.title}</div>
-                            <div style="color:gray; font-size:12px;">${v.snippet.channelTitle}</div>
+                            <div style="color:#aaa; font-size:12px; margin-top:5px;">${v.snippet.channelTitle}</div>
                         </div>
                     </div>`;
                 });
@@ -86,11 +174,11 @@
         }
 
         setInterval(() => {
-            document.getElementById('saat').innerText = "⏰ SAAT: " + new Date().toLocaleTimeString();
+            const now = new Date();
+            document.getElementById('saat').innerText = "⏰ " + now.toLocaleTimeString();
         }, 1000);
 
         window.onload = ara;
     </script>
 </body>
 </html>
-
