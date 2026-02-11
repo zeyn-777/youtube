@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="google7b77fdf188a3ba0b" />
+    
+    <meta name="google-site-verification" content="ZknNOnQw1wXCFHDsD-d3XV4MDPuNEBmALfAgG14yVpU" />
 
     <title>AZE YOTUBE | Azərbaycanın Video və Mahnı Portalı 2026</title>
     <meta name="description" content="AZE YOTUBE - Bakı, Gəncə və bütün Azərbaycan üzrə ən yeni video və mahnı platforması. 2026 trend meyxanalar və yeni mahnılar.">
@@ -28,13 +29,14 @@
         :root { --az-blue: #00B5E2; --az-red: #EF3340; --az-green: #509E2F; }
         body { margin: 0; background-color: #0f0f0f; color: white; font-family: 'Segoe UI', Arial, sans-serif; padding-bottom: 180px; overflow-x: hidden; }
         
+        /* Bayraq Animasiyalı Header */
         .header { 
             background: linear-gradient(270deg, var(--az-blue), var(--az-red), var(--az-green)); 
             background-size: 400% 400%; 
             animation: bayraq 6s ease infinite; 
             padding: 12px 15px; position: sticky; top: 0; z-index: 1000; 
             display: flex; align-items: center; justify-content: space-between; 
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid white; box-shadow: 0 4px 20px rgba(0,0,0,0.7);
         }
         @keyframes bayraq { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
@@ -55,7 +57,7 @@
         .search-btn { padding: 12px 20px; background: var(--az-red); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
         #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; padding: 15px; }
-        .v-card { background: #1e1e1e; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid #333; transition: 0.3s; }
+        .v-card { background: #1e1e1e; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid #333; position: relative; transition: 0.3s; }
         .v-card:hover { border-color: var(--az-blue); transform: translateY(-5px); }
         .v-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
         .v-info { padding: 12px; }
@@ -74,8 +76,8 @@
 
     <div class="seo-hidden">
         <h1>Azərbaycan mahnıları 2026 - AZE YOTUBE</h1>
-        <h2>Bakı və bütün bölgələr üçün yeni videolar</h2>
-        <p>AZE YOTUBE platformasında ən son meyxanalar, mahnılar və trendləri izləyin.</p>
+        <h2>Bakı, Gəncə və Sumqayıt üçün yeni videolar</h2>
+        <p>AZE YOTUBE platformasında ən son meyxanalar, mahnılar və trendləri izləyin. Azərbaycanın rəsmi video mərkəzi.</p>
     </div>
 
     <header class="header">
@@ -98,7 +100,7 @@
     <main id="list"></main>
 
     <footer class="footer">
-        <div id="saat" style="font-weight: bold; color: #00B5E2; margin-bottom: 8px;">00:00:00</div>
+        <div id="saat" style="font-weight: bold; color: #00B5E2; margin-bottom: 8px; font-size: 16px;">00:00:00</div>
         <div>
             <a href="mailto:azeproofficial@gmail.com" class="btn-link">GMAIL</a>
             <a href="https://t.me/Aze_Pro_Official" class="btn-link">TELEGRAM</a>
@@ -132,7 +134,7 @@
                     </div>`;
                 });
                 list.innerHTML = html;
-            } catch (e) { list.innerHTML = 'Xəta.'; }
+            } catch (e) { list.innerHTML = '<div style="text-align:center;">Xəta baş verdi.</div>'; }
         }
 
         function ac(id) {
@@ -143,7 +145,7 @@
             document.getElementById('screen').style.display = 'none';
             document.getElementById('frame').src = '';
         }
-        setInterval(() => { document.getElementById('saat').innerText = new Date().toLocaleTimeString('az-AZ'); }, 1000);
+        setInterval(() => { document.getElementById('saat').innerText = "⏰ " + new Date().toLocaleTimeString('az-AZ'); }, 1000);
         window.onload = ara;
     </script>
 </body>
