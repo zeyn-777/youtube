@@ -2,214 +2,95 @@
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <meta name="description" content="AZE YOTUBE - Azərbaycanın yeni video platforması. Ən maraqlı videolar, musiqilər və trendlər buradadır. Müəllif: AZEPRO.">
-    <meta name="keywords" content="aze tube, azerbaycan video, youtube clone, azepro, mp3 yukle, trend videolar, azeri mahnilar, aze youtube apk">
-    <meta name="author" content="AZEPRO">
-    <meta name="copyright" content="AZEPRO TƏRƏFİNDƏN BÜTÜN HÜQUQLAR QORUNUR">
-
-    <title>AZE YOTUBE | AZEPRO</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZE YOTUBE | REAL</title>
     <style>
-        /* ÜMUMİ DİZAYN */
-        body { 
-            margin: 0; 
-            font-family: 'Roboto', sans-serif; 
-            background-color: #0f0f0f; /* YouTube Qara */
-            color: white; 
-            padding-bottom: 250px; /* Aşağı hissə üçün yer */
-        }
-
-        /* HƏRƏKƏTLİ BAYRAQ ANİMASİYASI */
-        @keyframes bayraqDalgalanma {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .flag-style {
-            /* Azərbaycan Bayrağı Rəngləri (Göy, Qırmızı, Yaşıl) */
-            background: linear-gradient(270deg, #00B5E2, #EF3340, #509E2F);
-            background-size: 400% 400%;
-            animation: bayraqDalgalanma 6s ease infinite;
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-            border-bottom: 2px solid white;
-        }
-
-        /* BAŞLIQ (HEADER) */
-        .header { 
-            padding: 15px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        .logo { font-weight: 900; font-size: 20px; letter-spacing: 1px; display: flex; align-items: center; gap: 5px; }
-        .admin-txt { font-size: 10px; background: white; color: black; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
-
-        /* VİDEO KARTLARI */
-        .video-container { padding: 10px; }
-        .video-card { 
-            background: #1e1e1e; 
-            margin-bottom: 15px; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-        }
-        .thumbnail { width: 100%; height: 210px; object-fit: cover; }
-        .info { padding: 12px; display: flex; gap: 10px; }
-        .avatar { width: 40px; height: 40px; background: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; }
-        .details { flex: 1; }
-        .video-title { font-weight: bold; font-size: 15px; line-height: 1.3; margin-bottom: 5px; color: #fff; }
-        .channel-name { color: #aaa; font-size: 12px; }
-
-        /* AŞAĞI PANEL (FOOTER) - ƏLAQƏ VƏ İMZA */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 0;
-            text-align: center;
-            border-top: 3px solid white;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            z-index: 90;
-        }
-        
-        /* Əlaqə Düymələri */
-        .btn-group { margin: 10px 0; display: flex; justify-content: center; gap: 10px; }
-        .contact-btn {
-            padding: 10px 20px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid white;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        /* Müəllif Yazıları */
-        .copyright-box { 
-            background: rgba(0,0,0,0.6); 
-            margin: 10px 20px; 
-            padding: 10px; 
-            border-radius: 10px; 
-            font-size: 11px;
-            line-height: 1.6;
-        }
-        .azepro-imza { color: #00ffea; font-weight: bold; font-size: 13px; text-transform: uppercase; }
-        .clock { font-size: 16px; font-weight: bold; color: yellow; margin-bottom: 5px; }
-
-        /* VİDEO OYNADAN (PLAYER) */
-        .player-overlay { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: black; display: none; z-index: 2000; 
-            flex-direction: column; justify-content: center; align-items: center;
-        }
-        iframe { width: 100%; aspect-ratio: 16/9; border: none; }
-        .close-btn { 
-            margin-top: 20px; padding: 10px 40px; 
-            background: #cc0000; color: white; border-radius: 30px; 
-            font-weight: bold; font-size: 16px; cursor: pointer; border: 2px solid white;
-        }
+        body { margin: 0; background-color: #0f0f0f; color: white; font-family: sans-serif; padding-bottom: 200px; }
+        .header { padding: 15px; position: sticky; top: 0; z-index: 100; background: linear-gradient(270deg, #00B5E2, #EF3340, #509E2F); background-size: 400% 400%; animation: bayraq 6s ease infinite; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid white; }
+        @keyframes bayraq { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+        .search-area { padding: 10px; background: #202020; display: flex; gap: 5px; }
+        input { flex: 1; padding: 10px; border-radius: 5px; border: none; background: #333; color: white; }
+        button { padding: 10px; background: #EF3340; color: white; border: none; border-radius: 5px; font-weight: bold; }
+        .v-card { margin-bottom: 15px; background: #1e1e1e; border-radius: 10px; overflow: hidden; cursor: pointer;}
+        .v-thumb { width: 100%; height: 210px; object-fit: cover; }
+        .v-info { padding: 10px; }
+        .v-title { font-weight: bold; font-size: 15px; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .footer { position: fixed; bottom: 0; width: 100%; text-align: center; padding: 20px 0; background: linear-gradient(270deg, #00B5E2, #EF3340, #509E2F); animation: bayraq 6s ease infinite; border-top: 2px solid white; }
+        .player { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; display: none; z-index: 2000; flex-direction: column; justify-content: center; }
+        .close-p { padding: 15px; background: red; color: white; text-align: center; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="header flag-style">
-        <div class="logo">
-            <span style="font-size: 24px;">▶</span>
-            AZE YOTUBE
-        </div>
-        <div class="admin-txt">OWNER: AZEPRO</div>
+    <div class="header">
+        <div style="font-weight:bold; font-size: 20px;">AZE YOTUBE</div>
+        <div style="font-size: 10px; background:white; color:black; padding:2px;">AZEPRO</div>
     </div>
 
-    <div class="video-container" id="video-list">
-        </div>
-
-    <div class="footer flag-style">
-        <div class="clock" id="live-clock">00:00:00</div>
-        <div style="font-size: 12px; margin-bottom: 10px;">QURULMA TARİXİ: 12.02.2026</div>
-
-        <div class="btn-group">
-            <a href="mailto:admin@azepro.com" class="contact-btn">
-                ✉️ GMAIL
-            </a>
-            <a href="https://t.me/Aze_Pro_Official" class="contact-btn">
-                ✈️ TELEGRAM
-            </a>
-        </div>
-
-        <div class="copyright-box">
-            <span class="azepro-imza">MÜƏLLİF: AZEPRO</span><br>
-            AZEPRO TƏRƏFİNDƏN BÜTÜN HÜQUQLAR QORUNUR.<br>
-            COPYRIGHT © 2026 AZE YOTUBE
-        </div>
+    <div class="search-area">
+        <input type="text" id="q" placeholder="Video axtar...">
+        <button onclick="ara()">AXTAR</button>
     </div>
 
-    <div class="player-overlay" id="player">
-        <iframe id="video-frame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="close-btn" onclick="closeVideo()">VİDEONU BAĞLA ✕</div>
+    <div id="list"></div>
+
+    <div class="footer">
+        <div id="saat" style="font-weight: bold; color: yellow;">00:00:00</div>
+        <div style="font-size: 11px; margin-top: 5px;">MÜƏLLİF: AZEPRO | BÜTÜN HÜQUQLAR QORUNUR</div>
+    </div>
+
+    <div id="screen" class="player">
+        <div class="close-p" onclick="bagla()">VİDEONU BAĞLA ✕</div>
+        <iframe id="frame" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <script>
-        // VİDEO BAZASI (SEO sözləri başlıqlara əlavə edildi)
-        const videos = [
-            { id: 'ScMzIvxBSi4', title: 'Azərbaycan Təbiəti - Ən Gözəl Mənzərələr (4K Video)', channel: 'AZE TƏBİƏT', img: 'https://img.youtube.com/vi/ScMzIvxBSi4/hqdefault.jpg' },
-            { id: 'kN6DbJq1OQs', title: 'Sıfırdan Kodlaşdırma Dərsi - AZEPRO Dərsləri', channel: 'AZE PRO KOD', img: 'https://img.youtube.com/vi/kN6DbJq1OQs/hqdefault.jpg' },
-            { id: '5qap5aO4i9A', title: 'Rahatladıcı Musiqi - Stress Atmaq Üçün (MP3)', channel: 'Music Box', img: 'https://img.youtube.com/vi/5qap5aO4i9A/hqdefault.jpg' },
-            { id: 'gJtK5J9tGZg', title: 'Bakı Gecələri - Möhtəşəm Şəhər Görüntüləri', channel: 'Baku Life', img: 'https://img.youtube.com/vi/gJtK5J9tGZg/hqdefault.jpg' },
-            { id: 'LXb3EKWsInQ', title: 'Dünya Turu - Ən Maraqlı Yerlər', channel: 'Travel TV', img: 'https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg' }
-        ];
+        // SENİN API AÇARIN BURADA:
+        const KEY = 'AIzaSyB7C2O7EAaR0O5g-s7CKY2xOHjE23WgEWI'; 
 
-        // Videoları Ekrana Düzmək
-        const list = document.getElementById('video-list');
-        videos.forEach(v => {
-            list.innerHTML += `
-            <div class="video-card" onclick="playVideo('${v.id}')">
-                <img src="${v.img}" class="thumbnail">
-                <div class="info">
-                    <div class="avatar">${v.channel.charAt(0)}</div>
-                    <div class="details">
-                        <div class="video-title">${v.title}</div>
-                        <div class="channel-name">${v.channel} • AZEPRO TÖVSİYƏSİ</div>
-                    </div>
-                </div>
-            </div>`;
-        });
+        async function ara() {
+            const soz = document.getElementById('q').value || 'Azerbaijan trends';
+            try {
+                const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${soz}&type=video&key=${KEY}`);
+                const data = await res.json();
+                
+                if(data.error) {
+                    alert("Xəta baş verdi: " + data.error.message);
+                    return;
+                }
 
-        // Player Funksiyaları
-        function playVideo(id) {
-            document.getElementById('player').style.display = 'flex';
-            document.getElementById('video-frame').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+                let html = '';
+                data.items.forEach(v => {
+                    html += `
+                    <div class="v-card" onclick="ac('${v.id.videoId}')">
+                        <img src="${v.snippet.thumbnails.high.url}" class="v-thumb">
+                        <div class="v-info">
+                            <div class="v-title">${v.snippet.title}</div>
+                            <div style="color:gray; font-size:12px;">${v.snippet.channelTitle}</div>
+                        </div>
+                    </div>`;
+                });
+                document.getElementById('list').innerHTML = html;
+            } catch (e) {
+                console.log(e);
+            }
         }
 
-        function closeVideo() {
-            document.getElementById('player').style.display = 'none';
-            document.getElementById('video-frame').src = '';
+        function ac(id) {
+            document.getElementById('screen').style.display = 'flex';
+            document.getElementById('frame').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+        }
+        function bagla() {
+            document.getElementById('screen').style.display = 'none';
+            document.getElementById('frame').src = '';
         }
 
-        // CANLI SAAT VƏ TARİX FUNKSİYASI
-        function updateClock() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('az-AZ'); // Məs: 14:30:45
-            const dateString = now.toLocaleDateString('az-AZ'); // Məs: 12.02.2026
-            
-            document.getElementById('live-clock').innerText = `⏰ SAAT: ${timeString}`;
-        }
-        setInterval(updateClock, 1000); // Hər 1 saniyədən bir yenilə
-        updateClock(); // İlk açılışda dərhal göstər
+        setInterval(() => {
+            document.getElementById('saat').innerText = "⏰ SAAT: " + new Date().toLocaleTimeString();
+        }, 1000);
+
+        window.onload = ara;
     </script>
 </body>
 </html>
+
