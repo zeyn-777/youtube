@@ -3,199 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>AZE YOTUBE | Video və MP3 Yüklə 2026</title>
-    <meta name="description" content="AZE YOTUBE - Azərbaycanın ən yeni video portalı. Mahnı yüklə, video izlə, meyxana və trendlər.">
-    <meta name="keywords" content="aze pro, mahni yukle, mp3 yukle, video yukle, azerbaycan youtube, trend videolar">
-    <meta name="author" content="AZE PRO">
+    <title>AZEPRO MEDIA PLAYER | 2026</title>
+    <meta name="description" content="Azərbaycanın ən rəngarəng video və musiqi platforması.">
     
     <style>
-        :root { --az-blue: #00B5E2; --az-red: #EF3340; --az-green: #509E2F; --dark: #0f0f0f; }
-        
-        body { 
-            margin: 0; background-color: var(--dark); color: white; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            padding-bottom: 200px; /* Footer üçün yer */
-        }
-        
-        /* HEADER */
-        .header { 
-            background: linear-gradient(90deg, var(--az-blue), var(--az-red), var(--az-green));
-            padding: 15px; text-align: center; font-weight: 900; font-size: 22px;
-            letter-spacing: 1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        /* Rəngarəng Dizayn və Animasiyalar */
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ff;
+            --neon-green: #00ff00;
+            --bg-dark: #050505;
+            --card-bg: rgba(255, 255, 255, 0.05);
         }
 
-        /* APK Button */
-        .apk-area { background: #1a1a1a; padding: 10px; text-align: center; border-bottom: 1px solid #333; }
-        .apk-btn {
-            display: inline-block; background: #25D366; color: white; padding: 10px 20px;
-            border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 14px;
-            animation: pulse 2s infinite;
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
         }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* Hərəkətli Arxa Fon (Header üçün) */
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header {
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400%;
+            animation: rainbow 10s linear infinite;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo-text {
+            font-size: 24px; font-weight: 900; color: white;
+            text-shadow: 2px 2px 0px #000; text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        /* REKLAM QUTULARI */
+        .ad-box {
+            background: repeating-linear-gradient(45deg, #111, #111 10px, #222 10px, #222 20px);
+            border: 2px dashed var(--neon-blue);
+            color: #888;
+            padding: 20px;
+            margin: 15px auto;
+            width: 90%; max-width: 700px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 14px;
+            animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border { 0% { border-color: var(--neon-blue); } 50% { border-color: var(--neon-pink); } 100% { border-color: var(--neon-blue); } }
 
         /* Axtarış */
-        .search-container { padding: 15px; display: flex; gap: 8px; background: #222; position: sticky; top: 56px; z-index: 900; }
-        #search-input { flex: 1; padding: 12px; border-radius: 8px; border: none; outline: none; background: #333; color: white; }
-        .search-btn { padding: 0 20px; background: var(--az-red); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .search-area {
+            padding: 20px; display: flex; justify-content: center; gap: 10px;
+            background: #111;
+        }
+        #inp {
+            padding: 12px; width: 60%; border-radius: 25px; border: 2px solid #333;
+            background: #000; color: white; outline: none; transition: 0.3s;
+        }
+        #inp:focus { border-color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
+        .btn-search {
+            padding: 12px 25px; border-radius: 25px; border: none;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            color: white; font-weight: bold; cursor: pointer;
+        }
 
-        /* Video Listi */
-        #video-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; padding: 15px; }
-        .card { background: #1e1e1e; border-radius: 10px; overflow: hidden; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
-        .card:hover { transform: translateY(-5px); border-color: var(--az-blue); }
+        /* Video Kartları */
+        #list {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; padding: 20px;
+        }
+        .card {
+            background: var(--card-bg); border-radius: 15px; overflow: hidden;
+            border: 1px solid #333; transition: 0.3s; cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--neon-pink); box-shadow: 0 0 15px var(--neon-pink); }
         .thumb { width: 100%; height: 180px; object-fit: cover; }
-        .info { padding: 12px; }
-        .title { font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-        /* REKLAM YERİ */
-        .ad-space {
-            margin: 20px 15px; padding: 30px; border: 2px dashed #444; 
-            text-align: center; color: #666; background: #111; border-radius: 10px;
-        }
-        .ad-text { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* MODAL (Video Açılan Ekran) */
-        #modal { display: none; position: fixed; inset: 0; background: black; z-index: 2000; flex-direction: column; }
-        .modal-header { padding: 15px; display: flex; justify-content: space-between; align-items: center; background: #111; }
-        .close-btn { color: white; font-size: 24px; cursor: pointer; font-weight: bold; padding: 10px; }
-        
-        .download-buttons { display: flex; gap: 10px; padding: 15px; justify-content: center; background: #111; }
-        .dl-link { 
-            flex: 1; text-align: center; padding: 12px; border-radius: 8px; 
-            text-decoration: none; color: white; font-weight: bold; font-size: 14px; 
-        }
-        .dl-mp3 { background: linear-gradient(45deg, #FF0050, #990033); } 
-        .dl-mp4 { background: linear-gradient(45deg, #00B5E2, #005F7A); } 
+        .info { padding: 15px; }
+        .title { font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
         /* FOOTER */
         .footer {
-            background: #0a0a0a; padding: 30px 15px; text-align: center;
-            border-top: 2px solid var(--az-blue); margin-top: 30px;
+            background: #080808; padding: 40px 20px; text-align: center;
+            border-top: 3px solid var(--neon-blue); margin-top: 50px;
         }
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-        .s-btn {
-            display: flex; align-items: center; gap: 8px; padding: 10px 20px;
-            border-radius: 25px; text-decoration: none; color: white; font-size: 13px; font-weight: bold;
-            background: #222; border: 1px solid #333; transition: 0.3s;
+        .contact-title { color: var(--neon-green); font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
+        .socials { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; }
+        .s-link {
+            text-decoration: none; color: white; padding: 10px 20px; border-radius: 8px;
+            background: #222; border: 1px solid #444; font-size: 13px; transition: 0.3s;
         }
-        .s-btn:hover { background: #333; transform: scale(1.1); }
-        .tg { color: #0088cc; }
-        .gm { color: #EA4335; }
-        .tt { color: #fe2C55; }
-        .ig { color: #C13584; }
+        .s-link:hover { background: var(--neon-blue); color: black; box-shadow: 0 0 15px var(--neon-blue); }
+        
+        .time-box {
+            font-size: 18px; font-family: monospace; color: var(--neon-pink);
+            margin-top: 20px; font-weight: bold; letter-spacing: 2px;
+        }
+        .copyright { color: #555; font-size: 12px; margin-top: 10px; }
+
+        /* MODAL (Player) */
+        #screen { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; }
+        .close-btn { position: absolute; top: 20px; right: 20px; font-size: 40px; color: white; cursor: pointer; }
+        .dl-btns { display: flex; gap: 20px; margin-top: 20px; }
+        .dl-btn {
+            padding: 15px 30px; text-decoration: none; color: white; font-weight: bold; border-radius: 50px;
+            text-align: center; transition: 0.3s;
+        }
+        .mp3 { background: var(--neon-pink); box-shadow: 0 0 20px var(--neon-pink); }
+        .mp4 { background: var(--neon-blue); box-shadow: 0 0 20px var(--neon-blue); }
 
     </style>
 </head>
 <body>
 
-    <header class="header">🇦🇿 AZE YOTUBE PRO</header>
-
-    <div class="apk-area">
-        <a href="https://zeyn-777.github.io/youtube/app-release.apk" class="apk-btn">📲 Tətbiqi Yüklə (APK)</a>
+    <div class="header">
+        <div class="logo-text">🔥 AZEPRO MEDIA PLAYER</div>
     </div>
 
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Video axtar...">
-        <button class="search-btn" onclick="axtarIstifadeci()">AXTAR</button>
+    <div class="ad-box">
+        REKLAM YERİ (YUXARI) - 728x90<br>
+        <span style="font-size:10px; color:white;">Reklam üçün bizimlə əlaqə saxlayın</span>
     </div>
 
-    <div class="ad-space">
-        <span class="ad-text">Reklam Yeri (728x90)</span>
+    <div class="search-area">
+        <input type="text" id="inp" placeholder="Mahnı və ya Video axtar...">
+        <button class="btn-search" onclick="axtar()">AXTAR</button>
     </div>
 
-    <main id="video-list"></main>
+    <div class="ad-box" style="border-color: var(--neon-green);">
+        REKLAM YERİ (ORTA) - 300x250<br>
+        <span style="font-size:10px; color:white;">Ən yaxşı yer</span>
+    </div>
+
+    <main id="list"></main>
+
+    <div class="ad-box" style="border-color: var(--neon-pink);">
+        REKLAM YERİ (AŞAĞI) - 728x90
+    </div>
 
     <footer class="footer">
-        <h3 style="margin-bottom: 20px; color: var(--az-blue);">BİZİMLƏ ƏLAQƏ</h3>
+        <div class="contact-title">✨ BİZİMLƏ ƏLAQƏ VƏ REKLAM ✨</div>
         
-        <div class="social-links">
-            <a href="https://t.me/Aze_Pro_Official" class="s-btn tg">✈️ Telegram</a>
-            <a href="mailto:azeproofficial@gmail.com" class="s-btn gm">📧 Gmail</a>
-            <a href="https://www.tiktok.com/@aze_pro_official" class="s-btn tt">🎵 TikTok</a>
-            <a href="https://instagram.com/aze_pro_official" class="s-btn ig">📸 Instagram</a>
+        <div class="socials">
+            <a href="https://www.tiktok.com/@aze_pro_official" class="s-link" target="_blank">🎵 TikTok: @aze_pro_official</a>
+            <a href="https://t.me/Aze_Pro_Official" class="s-link" target="_blank">✈️ Telegram: Aze_Pro_Official</a>
+            <a href="mailto:azeproofficial@gmail.com" class="s-link">📧 Gmail: azeproofficial@gmail.com</a>
         </div>
 
-        <p style="font-size: 11px; color: #666;">© 2026 AZE PRO OFFICIAL.</p>
+        <div class="time-box" id="saat">00:00:00</div>
+        
+        <div class="copyright">
+            <p>Müəllif: AZEPRO OFFICIAL</p>
+            <p>Saytın yaradılma tarixi: 12 Fevral 2026</p>
+            <p>© 2026 Bütün hüquqlar qorunur.</p>
+        </div>
     </footer>
 
-    <div id="modal">
-        <div class="modal-header">
-            <span>İzlə və Yüklə</span>
-            <div class="close-btn" onclick="bagla()">✕</div>
-        </div>
+    <div id="screen">
+        <div class="close-btn" onclick="bagla()">×</div>
+        <iframe id="frame" width="90%" height="300" src="" frameborder="0" allowfullscreen style="border: 2px solid var(--neon-blue); box-shadow: 0 0 30px var(--neon-blue);"></iframe>
         
-        <iframe id="player" width="100%" height="300" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        
-        <div class="download-buttons">
-            <a id="btn-mp3" href="#" target="_blank" class="dl-link dl-mp3">🎵 MP3 YÜKLƏ</a>
-            <a id="btn-mp4" href="#" target="_blank" class="dl-link dl-mp4">🎬 VİDEO YÜKLƏ</a>
-        </div>
-        
-        <div class="ad-space" style="margin: 10px; padding: 15px; border-color: #333;">
-            <span class="ad-text">Reklam Yeri (Video Altı)</span>
+        <div class="dl-btns">
+            <a id="d-mp3" href="#" target="_blank" class="dl-btn mp3">🎵 MP3 YÜKLƏ</a>
+            <a id="d-mp4" href="#" target="_blank" class="dl-btn mp4">🎬 VİDEO YÜKLƏ</a>
         </div>
     </div>
 
     <script>
-        const API_KEY = 'AIzaSyB7C2O7EAaR0O5g-s7CKY2xOHjE23WgEWI'; 
+        const API = 'AIzaSyB7C2O7EAaR0O5g-s7CKY2xOHjE23WgEWI'; 
 
-        // 1. Sayt açılan kimi bu işə düşür
-        window.onload = function() {
-            // Avtomatik trendləri gətir
-            apiSorgusu("Azərbaycan trend meyxana mahnı 2026");
-        };
+        // Saatı işlədən funksiya
+        setInterval(() => {
+            const indi = new Date();
+            const vaxt = indi.toLocaleTimeString('az-AZ');
+            const tarix = indi.toLocaleDateString('az-AZ');
+            document.getElementById('saat').innerText = `📅 ${tarix} | ⏰ ${vaxt}`;
+        }, 1000);
 
-        // 2. İstifadəçi düyməyə basanda bu işə düşür
-        function axtarIstifadeci() {
-            const soz = document.getElementById('search-input').value;
-            if(soz) {
-                apiSorgusu(soz);
-            } else {
-                alert("Zəhmət olmasa söz yazın!");
-            }
+        // Sayt açılan kimi trendləri gətir
+        window.onload = () => { sorgu("Azərbaycan mahnıları trend 2026"); };
+
+        function axtar() {
+            const soz = document.getElementById('inp').value;
+            if(soz) sorgu(soz);
         }
 
-        // 3. Əsas işləyən funksiya
-        async function apiSorgusu(soz) {
-            const list = document.getElementById('video-list');
-            list.innerHTML = '<p style="text-align:center; padding:20px; color:#888;">Yüklənir...</p>';
-
+        async function sorgu(soz) {
+            const list = document.getElementById('list');
+            list.innerHTML = '<h3 style="text-align:center; color:var(--neon-blue);">Axtarılır...</h3>';
+            
             try {
-                const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=12&q=${encodeURIComponent(soz)}&type=video&key=${API_KEY}`;
-                const response = await fetch(url);
-                const data = await response.json();
-
-                list.innerHTML = ""; 
-
-                if (data.items) {
-                    data.items.forEach(v => {
+                const r = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=12&q=${encodeURIComponent(soz)}&type=video&key=${API}`);
+                const d = await r.json();
+                list.innerHTML = "";
+                
+                if(d.items){
+                    d.items.forEach(v => {
                         list.innerHTML += `
-                        <div class="card" onclick="ac('${v.id.videoId}')">
+                        <div class="card" onclick="play('${v.id.videoId}')">
                             <img src="${v.snippet.thumbnails.high.url}" class="thumb">
                             <div class="info">
                                 <div class="title">${v.snippet.title}</div>
                             </div>
                         </div>`;
                     });
-                } else {
-                    list.innerHTML = '<p style="text-align:center;">Video tapılmadı.</p>';
                 }
-            } catch (e) {
-                list.innerHTML = '<p style="text-align:center;">Xəta: Limit bitmiş ola bilər.</p>';
-            }
+            } catch(e) { list.innerHTML = "Xəta oldu."; }
         }
 
-        function ac(id) {
-            document.getElementById('modal').style.display = 'flex';
-            document.getElementById('player').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-            document.getElementById('btn-mp3').href = `https://y2mate.is/watch?v=${id}`;
-            document.getElementById('btn-mp4').href = `https://ssyoutube.com/watch?v=${id}`;
+        function play(id) {
+            document.getElementById('screen').style.display = 'flex';
+            document.getElementById('frame').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+            document.getElementById('d-mp3').href = `https://y2mate.is/watch?v=${id}`;
+            document.getElementById('d-mp4').href = `https://ssyoutube.com/watch?v=${id}`;
         }
 
         function bagla() {
-            document.getElementById('modal').style.display = 'none';
-            document.getElementById('player').src = "";
+            document.getElementById('screen').style.display = 'none';
+            document.getElementById('frame').src = "";
         }
     </script>
 </body>
