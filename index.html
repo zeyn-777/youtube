@@ -4,174 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <title>AZEPRO MEDIA | Video və Musiqi Platforması</title>
-    <meta name="description" content="Azərbaycanın ən böyük video portalı. Musiqi, Meyxana, Kino və Xəbərlər tək ünvanda. MP3 və Video yüklə.">
-    <meta name="keywords" content="aze youtube, video yukle, musiqi 2026, meyxana, kino izle, mp3 yukle">
+    <title>AZEPRO MEDIA – Azərbaycan Video və Musiqi Portalı 2026 | MP3 Video Yüklə</title>
     
-    <meta property="og:site_name" content="AZEPRO MEDIA">
+    <meta name="description" content="Azərbaycanın ən böyük video və musiqi platforması. Trend videolar, mahnılar, meyxana və kino izləyin və MP3 yükləyin.">
+    <meta name="keywords" content="Azeri video, MP3 yüklə, meyxana, azeri mahnılar, AZEPRO MEDIA, AZE YOUTUBE">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://azvideo.netlify.app/">
+
+    <meta property="og:title" content="AZEPRO MEDIA – Azərbaycan Video və Musiqi Platforması">
+    <meta property="og:description" content="Trend videolar, mahnılar və kino izləyin və yükləyin.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://azvideo.netlify.app/">
     <meta property="og:image" content="https://azvideo.netlify.app/logo.png">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "AZEPRO MEDIA",
-      "url": "https://azvideo.netlify.app/"
-    }
-    </script>
-
     <style>
-        /* --- DİZAYN (NEON DARK) --- */
-        :root { --neon: #00f3ff; --pink: #ff00ff; --bg: #050505; --card: #111; }
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; background: var(--bg); color: white; font-family: sans-serif; padding-bottom: 60px; }
-
-        /* Header */
-        .header { background: #111; padding: 15px; text-align: center; border-bottom: 2px solid var(--neon); position: sticky; top: 0; z-index: 999; }
-        .logo { font-size: 20px; font-weight: 900; background: linear-gradient(90deg, var(--neon), var(--pink)); -webkit-background-clip: text; color: transparent; }
-
-        /* REAL HTML LINKS (SEO ÜÇÜN ƏN VACİBİ) */
-        .nav-menu { display: flex; gap: 10px; overflow-x: auto; padding: 15px; background: #000; border-bottom: 1px solid #222; scrollbar-width: none; }
-        .nav-link { 
-            display: inline-block; padding: 8px 20px; background: #1a1a1a; color: #aaa; 
-            border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: bold; border: 1px solid #333; white-space: nowrap;
-        }
-        .nav-link.active { background: var(--neon); color: black; box-shadow: 0 0 15px var(--neon); border-color: var(--neon); }
-
-        /* Search */
-        .search-box { padding: 15px; display: flex; justify-content: center; background: #0a0a0a; }
-        #inp { padding: 10px; width: 70%; border-radius: 20px; border: 1px solid #333; background: #000; color: white; }
-        .btn-go { padding: 10px 20px; margin-left: 10px; border-radius: 20px; border: none; background: var(--pink); color: white; font-weight: bold; cursor: pointer; }
-
-        /* Grid */
-        #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; padding: 15px; }
-        @media(min-width: 768px) { #list { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
+        /* Sənin orijinal neon dizaynın buraya daxildir */
+        :root { --neon-blue: #00f3ff; --neon-pink: #ff00ff; --neon-green: #00ff00; --bg-dark: #050505; --card-bg: rgba(255, 255, 255, 0.05); }
+        body { margin: 0; background-color: var(--bg-dark); color: white; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+        .header { background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); background-size: 400%; animation: rainbow 10s linear infinite; padding: 20px; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.8); position: sticky; top: 0; z-index: 1000; }
+        @keyframes rainbow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .logo-text { font-size: 24px; font-weight: 900; color: white; text-shadow: 2px 2px 0px #000; text-transform: uppercase; letter-spacing: 2px; }
+        .search-area { padding: 20px; display: flex; justify-content: center; gap: 10px; background: #111; }
+        #inp { padding: 12px; width: 60%; border-radius: 25px; border: 2px solid #333; background: #000; color: white; outline: none; }
+        .btn-search { padding: 12px 25px; border-radius: 25px; border: none; background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink)); color: white; font-weight: bold; cursor: pointer; }
+        #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #333; transition: 0.3s; cursor: pointer; }
+        .thumb { width: 100%; height: 180px; object-fit: cover; }
+        .info { padding: 15px; }
         
-        .card { background: var(--card); border-radius: 10px; overflow: hidden; border: 1px solid #222; cursor: pointer; }
-        .thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-        .info { padding: 10px; font-size: 12px; color: #ccc; }
+        /* SEO CONTENT - Google üçün vacib mətn */
+        .seo-box { max-width: 800px; margin: 30px auto; padding: 20px; color: #777; font-size: 14px; border-top: 1px solid #222; line-height: 1.6; }
+        .seo-box h2 { color: var(--neon-blue); font-size: 18px; }
 
-        /* Static SEO Text */
-        .seo-text { max-width: 800px; margin: 30px auto; padding: 20px; background: #111; font-size: 14px; color: #888; line-height: 1.6; }
-        .seo-text h1 { color: white; font-size: 20px; }
-        
-        /* Player */
-        #screen { display: none; position: fixed; inset: 0; background: black; z-index: 2000; flex-direction: column; align-items: center; justify-content: center; }
-        iframe { width: 100%; max-width: 800px; aspect-ratio: 16/9; border: none; }
-        .close { position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; cursor: pointer; }
-        .dls { display: flex; gap: 15px; margin-top: 20px; }
-        .dl { padding: 10px 25px; border-radius: 20px; text-decoration: none; color: white; font-weight: bold; }
-        .mp3 { background: var(--pink); } .mp4 { background: var(--neon); color: black; }
+        #screen { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; }
+        .close-btn { position: absolute; top: 20px; right: 20px; font-size: 40px; color: white; cursor: pointer; }
+        .dl-btns { display: flex; gap: 20px; margin-top: 20px; }
+        .dl-btn { padding: 15px 30px; text-decoration: none; color: white; font-weight: bold; border-radius: 50px; }
+        .mp3 { background: var(--neon-pink); } .mp4 { background: var(--neon-blue); color: black; }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <div class="logo">🚀 AZEPRO MEDIA</div>
+        <div class="logo-text">🚀 AZEPRO MEDIA</div>
     </header>
 
-    <nav class="nav-menu">
-        <a href="index.html" class="nav-link" id="link-index">🔥 Trend</a>
-        <a href="musiqi.html" class="nav-link" id="link-musiqi">🎵 Musiqi</a>
-        <a href="meyxana.html" class="nav-link" id="link-meyxana">🎤 Meyxana</a>
-        <a href="shorts.html" class="nav-link" id="link-shorts">📱 Shorts</a>
-        <a href="kino.html" class="nav-link" id="link-kino">🎬 Kino</a>
-        <a href="xeber.html" class="nav-link" id="link-xeber">📰 Xəbər</a>
-    </nav>
-
-    <div class="search-box">
-        <input type="text" id="inp" placeholder="Axtar...">
-        <button class="btn-go" onclick="axtar()">🔍</button>
+    <div class="search-area">
+        <input type="text" id="inp" placeholder="Mahnı və ya Video axtar...">
+        <button class="btn-search" onclick="axtar()">AXTAR</button>
     </div>
 
     <main id="list"></main>
 
-    <section class="seo-text">
-        <h1 id="page-h1">AZEPRO MEDIA - Video Platforması</h1>
-        <p>AZEPRO MEDIA vasitəsilə ən yeni videoları, musiqiləri və meyxanaları izləyə bilərsiniz. Saytımızda axtarış edərək istədiyiniz məzmunu tapın və yükləyin.</p>
-    </section>
+    <div class="seo-box">
+        <h2>Azərbaycanın Ən Böyük Video Platforması</h2>
+        <p>AZEPRO MEDIA Azərbaycanda video izləmək, MP3 yükləmək və trend məzmun tapmaq üçün yaradılmışdır. Ən yeni meyxanalar, mahnılar və filmlər tək ünvanda.</p>
+    </div>
 
     <div id="screen">
-        <div class="close" onclick="document.getElementById('screen').style.display='none'; document.getElementById('frame').src='';">×</div>
-        <iframe id="frame" src="" allowfullscreen allow="autoplay"></iframe>
-        <div class="dls">
-            <a id="d-mp3" href="#" target="_blank" class="dl mp3">MP3</a>
-            <a id="d-mp4" href="#" target="_blank" class="dl mp4">VIDEO</a>
+        <div class="close-btn" onclick="bagla()">×</div>
+        <iframe id="frame" width="90%" height="300" src="" frameborder="0" allowfullscreen></iframe>
+        <div class="dl-btns">
+            <a id="d-mp3" href="#" target="_blank" class="dl-btn mp3">🎵 MP3 YÜKLƏ</a>
+            <a id="d-mp4" href="#" target="_blank" class="dl-btn mp4">🎬 VİDEO YÜKLƏ</a>
         </div>
     </div>
 
     <script>
         const API = 'AIzaSyB7C2O7EAaR0O5g-s7CKY2xOHjE23WgEWI'; 
 
-        // --- AĞILLI SKRİPT: FAYL ADINA BAXIB NƏ AÇACAĞINI BİLİR ---
+        // ROUTİNG - URL-dən video ID-sini oxuyur (/video/ID)
         window.onload = () => {
-            const path = window.location.pathname; // Məsələn: /musiqi.html
-            let query = "Azərbaycan trend 2026"; // Default
-            let activeId = "link-index";
-            let title = "Trend Videolar";
-
-            if (path.includes("musiqi")) {
-                query = "yeni azeri mahnilar 2026";
-                activeId = "link-musiqi";
-                title = "Ən Yeni Mahnılar";
-            } 
-            else if (path.includes("meyxana")) {
-                query = "yeni meyxana 2026";
-                activeId = "link-meyxana";
-                title = "Meyxana Aləmi";
+            const path = window.location.pathname;
+            if(path.startsWith('/video/')) {
+                const id = path.split('/').pop();
+                play(id);
+            } else {
+                sorgu("Azərbaycan mahnıları trend 2026");
             }
-            else if (path.includes("shorts")) {
-                query = "tiktok azerbaycan funny";
-                activeId = "link-shorts";
-                title = "Shorts Videolar";
-            }
-            else if (path.includes("kino")) {
-                query = "azeri filmler full izle";
-                activeId = "link-kino";
-                title = "Kino və Filmlər";
-            }
-            else if (path.includes("xeber")) {
-                query = "azerbaycan son xeberler";
-                activeId = "link-xeber";
-                title = "Son Xəbərlər";
-            }
-
-            // Menyuda aktiv düyməni rənglə
-            const activeBtn = document.getElementById(activeId);
-            if(activeBtn) activeBtn.classList.add("active");
-
-            // Səhifə başlığını və H1-i dəyiş (SEO görüntüsü üçün)
-            document.title = "AZEPRO | " + title;
-            document.getElementById("page-h1").innerText = title + " - AZEPRO MEDIA";
-
-            // Sorğunu göndər
-            sorgu(query);
         };
 
         function axtar() {
-            const v = document.getElementById('inp').value;
-            if(v) sorgu(v);
+            const soz = document.getElementById('inp').value;
+            if(soz) sorgu(soz);
         }
 
-        async function sorgu(q) {
+        async function sorgu(soz) {
             const list = document.getElementById('list');
-            list.innerHTML = '<p style="text-align:center; padding:20px;">Yüklənir...</p>';
+            list.innerHTML = '<h3 style="text-align:center; color:var(--neon-blue);">Axtarılır...</h3>';
             try {
-                const r = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=16&q=${encodeURIComponent(q)}&type=video&key=${API}`);
+                const r = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=16&q=${encodeURIComponent(soz)}&type=video&key=${API}`);
                 const d = await r.json();
                 list.innerHTML = "";
                 if(d.items) {
                     d.items.forEach(v => {
                         list.innerHTML += `
-                        <div class="card" onclick="play('${v.id.videoId}')">
+                        <a href="/video/${v.id.videoId}" onclick="event.preventDefault(); history.pushState(null,null,'/video/${v.id.videoId}'); play('${v.id.videoId}')" class="card" style="text-decoration:none; color:white;">
                             <img src="${v.snippet.thumbnails.high.url}" class="thumb">
-                            <div class="info">${v.snippet.title}</div>
-                        </div>`;
+                            <div class="info"><div class="title">${v.snippet.title}</div></div>
+                        </a>`;
                     });
                 }
-            } catch(e) { list.innerHTML = "Xəta."; }
+            } catch(e) { list.innerHTML = "Xəta oldu."; }
         }
 
         function play(id) {
@@ -180,6 +115,13 @@
             document.getElementById('d-mp3').href = `https://y2mate.is/watch?v=${id}`;
             document.getElementById('d-mp4').href = `https://ssyoutube.com/watch?v=${id}`;
         }
+
+        function bagla() {
+            document.getElementById('screen').style.display = 'none';
+            document.getElementById('frame').src = "";
+            history.pushState(null,null,'/');
+        }
     </script>
 </body>
 </html>
+
