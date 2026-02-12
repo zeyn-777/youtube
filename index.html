@@ -2,307 +2,253 @@
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <title>AZEPRO MEDIA | Ən Yeni Videolar və Musiqilər 2026</title>
-    <meta name="description" content="Azərbaycanın ən yeni video, musiqi, meyxana və əyləncə platforması. Trend videoları izlə və yüklə.">
-    <meta name="keywords" content="azeri mahnilar, video yukle, mp3 yukle, trend videolar, meyxana 2026, shorts azerbaijan">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
+    <title>AZEPRO MEDIA - Azərbaycanın Ən Böyük Video və Musiqi Portalı 2026</title>
+    <meta name="description" content="AZEPRO MEDIA 2026: Ən yeni Azərbaycan mahnıları, trend videolar, meyxana deyişmələri, kino və xəbərlər. MP3 və Video yükləmə imkanı.">
+    <meta name="keywords" content="azepro, aze youtube, video yukle, mp3 yukle, azeri mahnilar 2026, yeni meyxana, trend videolar, pulsuz kino izle">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="AZEPRO OFFICIAL">
+    <meta name="language" content="Azerbaijani">
+    <meta name="geo.region" content="AZ">
+    <meta name="geo.placename" content="Baku">
 
-    <meta property="og:title" content="AZEPRO MEDIA | Video və Musiqi Platforması">
-    <meta property="og:description" content="Ən son trendləri AZEPRO ilə izləyin.">
+    <meta property="og:site_name" content="AZEPRO MEDIA">
+    <meta property="og:title" content="AZEPRO MEDIA - Video və Musiqi Dünyası">
+    <meta property="og:description" content="Ən son trendləri, musiqiləri və videoları AZEPRO fərqi ilə izləyin.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://azvideo.netlify.app/">
+    <meta property="og:image" content="https://azvideo.netlify.app/logo.png"> <meta property="og:locale" content="az_AZ">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AZEPRO MEDIA | Video Portal">
+    <meta name="twitter:description" content="Azərbaycanın ən sürətli video və musiqi platforması.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AZEPRO MEDIA",
+      "url": "https://azvideo.netlify.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://azvideo.netlify.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "Azərbaycanın video, musiqi və əyləncə platforması."
+    }
+    </script>
 
     <style>
-        /* --- ƏSAS DİZAYN (NEON DARK) --- */
+        /* --- DİZAYN (SEO Mətnləri üçün oxunaqlılıq əlavə edilib) --- */
         :root {
             --neon-blue: #00f3ff;
             --neon-pink: #ff00ff;
-            --neon-green: #00ff00;
             --bg-dark: #050505;
             --card-bg: #111;
+            --text-gray: #b0b0b0;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background-color: var(--bg-dark); color: white; font-family: 'Segoe UI', system-ui, sans-serif; padding-bottom: 60px; }
 
-        body {
-            margin: 0;
-            background-color: var(--bg-dark);
-            color: white;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            overflow-x: hidden;
-            padding-bottom: 80px;
-        }
-
-        /* HEADER */
-        @keyframes rainbow { 
-            0% { background-position: 0% 50%; } 
-            50% { background-position: 100% 50%; } 
-            100% { background-position: 0% 50%; } 
-        }
-
+        /* Header */
         .header {
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            background-size: 400%;
-            animation: rainbow 10s linear infinite;
-            padding: 15px; text-align: center;
-            position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            background: linear-gradient(90deg, #111, #222); padding: 15px; text-align: center;
+            position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--neon-blue);
         }
+        .logo-text { font-size: 22px; font-weight: 900; background: linear-gradient(to right, var(--neon-blue), var(--neon-pink)); -webkit-background-clip: text; color: transparent; }
 
-        .logo-text {
-            font-size: 20px; font-weight: 900; color: white;
-            text-shadow: 2px 2px 0px #000; text-transform: uppercase; letter-spacing: 1px;
-        }
+        /* Menyu */
+        .scroll-menu { display: flex; gap: 10px; overflow-x: auto; padding: 15px; background: #0a0a0a; white-space: nowrap; scrollbar-width: none; }
+        .cat-btn { background: #1a1a1a; color: #aaa; border: 1px solid #333; padding: 8px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .cat-btn.active { background: var(--neon-blue); color: black; box-shadow: 0 0 10px var(--neon-blue); }
 
-        /* KATEQORIYA MENYUSU (SCROLL) */
-        .scroll-menu {
-            display: flex; gap: 10px; overflow-x: auto; padding: 15px 10px;
-            background: #0a0a0a; border-bottom: 1px solid #222;
-            white-space: nowrap; scrollbar-width: none;
-        }
-        .scroll-menu::-webkit-scrollbar { display: none; }
+        /* Axtarış */
+        .search-area { padding: 15px; display: flex; justify-content: center; background: #000; }
+        #inp { padding: 12px; width: 70%; border-radius: 25px; border: 1px solid #333; background: #111; color: white; outline: none; }
+        .btn-search { padding: 12px 20px; margin-left: 10px; border-radius: 25px; border: none; background: var(--neon-pink); color: white; font-weight: bold; cursor: pointer; }
 
-        .cat-btn {
-            background: #1a1a1a; color: #aaa; border: 1px solid #333;
-            padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600;
-            cursor: pointer; transition: 0.3s;
-        }
-        .cat-btn.active, .cat-btn:hover {
-            background: var(--neon-blue); color: #000; border-color: var(--neon-blue);
-            box-shadow: 0 0 10px var(--neon-blue);
-        }
-
-        /* AXTARIŞ */
-        .search-area {
-            padding: 15px; display: flex; justify-content: center; gap: 10px;
-            background: #000;
-        }
-        #inp {
-            padding: 12px; width: 70%; border-radius: 25px; border: 1px solid #333;
-            background: #111; color: white; outline: none; font-size: 16px;
-        }
-        #inp:focus { border-color: var(--neon-green); }
-        .btn-search {
-            padding: 12px 20px; border-radius: 25px; border: none;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
-            color: white; font-weight: bold; cursor: pointer;
-        }
-
-        /* REKLAM */
-        .ad-box {
-            background: repeating-linear-gradient(45deg, #111, #111 10px, #222 10px, #222 20px);
-            border: 2px dashed #333; color: #666; padding: 15px; margin: 15px auto;
-            width: 95%; max-width: 600px; text-align: center; border-radius: 8px; font-size: 11px;
-        }
-
-        /* VİDEO GRİD */
-        #list {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
-            gap: 10px; padding: 10px;
-        }
-        @media(min-width: 768px) {
-            #list { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; padding: 20px; }
-        }
-
-        .card {
-            background: var(--card-bg); border-radius: 10px; overflow: hidden;
-            border: 1px solid #222; transition: 0.2s; cursor: pointer;
-            position: relative;
-        }
-        .card:active { transform: scale(0.96); }
+        /* Video List */
+        #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; padding: 15px; min-height: 300px; }
+        @media(min-width: 768px) { #list { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
+        
+        .card { background: var(--card-bg); border-radius: 10px; overflow: hidden; transition: 0.2s; cursor: pointer; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2); }
         .thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
         .info { padding: 10px; }
-        .title { 
-            font-size: 13px; color: #eee; line-height: 1.4; margin: 0;
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; 
+        .title { font-size: 13px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* --- SEO CONTENT BLOCK (Vacib Hissə) --- */
+        .seo-article {
+            max-width: 800px; margin: 40px auto; padding: 20px;
+            background: #111; border-radius: 15px; border: 1px solid #222;
         }
+        .seo-article h1 { color: var(--neon-blue); font-size: 24px; margin-bottom: 10px; }
+        .seo-article h2 { color: var(--neon-pink); font-size: 20px; margin-top: 20px; }
+        .seo-article p { color: var(--text-gray); line-height: 1.6; font-size: 15px; margin-bottom: 15px; }
+        .seo-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .tag { background: #222; padding: 5px 10px; font-size: 12px; color: #888; border-radius: 5px; }
 
-        /* FOOTER */
-        .footer {
-            background: #080808; padding: 30px 20px; text-align: center;
-            border-top: 1px solid #222; margin-top: 30px;
-        }
-        .socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
-        .s-link { text-decoration: none; color: #888; font-size: 12px; }
-        .time-box { font-family: monospace; color: var(--neon-pink); font-size: 14px; }
+        /* Footer */
+        .footer { text-align: center; padding: 30px; border-top: 1px solid #222; color: #666; font-size: 12px; }
 
-        /* PLAYER MODAL */
-        #screen { display: none; position: fixed; inset: 0; background: black; z-index: 2000; flex-direction: column; }
-        .player-head { padding: 10px; display: flex; justify-content: flex-end; }
-        .close-btn { font-size: 30px; color: white; padding: 10px; cursor: pointer; }
-        
-        .video-container { width: 100%; height: 40vh; background: #000; display: flex; align-items: center; justify-content: center; }
-        iframe { width: 100%; height: 100%; border: none; }
-
-        .dl-area { padding: 20px; text-align: center; }
-        .dl-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .dl-btn {
-            padding: 15px; text-decoration: none; color: white; font-weight: bold; border-radius: 10px;
-            text-align: center; font-size: 14px; display: flex; align-items: center; justify-content: center;
-        }
-        .mp3 { background: #222; color: var(--neon-pink); border: 1px solid var(--neon-pink); }
-        .mp4 { background: var(--neon-blue); color: black; }
-
-        /* LOADING */
-        #loading { display: none; text-align: center; padding: 20px; color: var(--neon-blue); }
-
+        /* Player */
+        #screen { display: none; position: fixed; inset: 0; background: black; z-index: 2000; flex-direction: column; align-items: center; justify-content: center; }
+        iframe { width: 100%; max-width: 800px; aspect-ratio: 16/9; border: none; box-shadow: 0 0 30px var(--neon-blue); }
+        .close-btn { position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; cursor: pointer; }
+        .dl-btns { display: flex; gap: 20px; margin-top: 20px; }
+        .dl-btn { padding: 10px 25px; border-radius: 20px; text-decoration: none; font-weight: bold; color: white; }
+        .mp3 { background: var(--neon-pink); } .mp4 { background: var(--neon-blue); color: black; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="logo-text">🔥 AZEPRO MEDIA</div>
-    </div>
+    <header class="header">
+        <div class="logo-text">🚀 AZEPRO MEDIA</div>
+    </header>
 
-    <div class="scroll-menu">
-        <button class="cat-btn active" id="btn-trend" onclick="bolme('trend', this)">🔥 Trend</button>
-        <button class="cat-btn" id="btn-musiqi" onclick="bolme('musiqi', this)">🎵 Musiqi</button>
-        <button class="cat-btn" id="btn-meyxana" onclick="bolme('meyxana', this)">🎤 Meyxana</button>
-        <button class="cat-btn" id="btn-shorts" onclick="bolme('shorts', this)">📱 Shorts</button>
-        <button class="cat-btn" id="btn-kino" onclick="bolme('kino', this)">🎬 Kino</button>
-        <button class="cat-btn" id="btn-xeber" onclick="bolme('xeber', this)">📰 Xəbər</button>
-    </div>
-
-    <div class="ad-box">REKLAM YERİ (320x50)</div>
+    <nav class="scroll-menu">
+        <button class="cat-btn active" onclick="bolme('trend', this)">🔥 Trend</button>
+        <button class="cat-btn" onclick="bolme('musiqi', this)">🎵 Musiqi</button>
+        <button class="cat-btn" onclick="bolme('meyxana', this)">🎤 Meyxana</button>
+        <button class="cat-btn" onclick="bolme('shorts', this)">📱 Shorts</button>
+        <button class="cat-btn" onclick="bolme('kino', this)">🎬 Kino</button>
+        <button class="cat-btn" onclick="bolme('xeber', this)">📰 Xəbər</button>
+    </nav>
 
     <div class="search-area">
-        <input type="text" id="inp" placeholder="Video axtar...">
-        <button class="btn-search" onclick="axtar()">🔍</button>
+        <input type="text" id="inp" placeholder="Mahnı və ya Video axtar...">
+        <button class="btn-search" onclick="axtar()">AXTAR</button>
     </div>
 
-    <div id="loading">Yüklənir...</div>
     <main id="list"></main>
 
-    <div class="ad-box" style="border-color: var(--neon-pink);">REKLAM YERİ (300x250)</div>
+    <section class="seo-article">
+        <h1>AZEPRO MEDIA – Azərbaycanın Yeni Nəsil Video Portalı</h1>
+        <p>
+            Xoş gəlmisiniz! <strong>AZEPRO MEDIA</strong>, 2026-cı ilin ən müasir və sürətli video platformasıdır. Biz istifadəçilərimizə Azərbaycanın ən yeni musiqilərini, trend videolarını, meyxana deyişmələrini və filmlərini yüksək keyfiyyətdə təqdim edirik. YouTube API üzərindən işləyən sistemimiz sayəsində, siz heç bir donma olmadan videoları izləyə və istədiyiniz formatda (MP3, MP4) yükləyə bilərsiniz.
+        </p>
+
+        <h2>🔥 Trend Videolar və Əyləncə Dünyası</h2>
+        <p>
+            Azərbaycan YouTube seqmentində (AzeTube) ən çox izlənilən videoları bir araya toplayırıq. Gündəlik olaraq yenilənən "Trend" bölməmizdə, sosial şəbəkələrdə viral olan ən son hadisələri, gülməli videoları və maraqlı verilişləri tapa bilərsiniz. AZEPRO sizə vaxt itirmədən ən populyar məzmunlara çıxış imkanı yaradır.
+        </p>
+
+        <h2>🎵 Musiqi və Yeni Mahnılar 2026</h2>
+        <p>
+            Musiqi zövqünüzə uyğun hər şey burada! <em>Azərbaycan estradası</em>, <em>pop musiqisi</em>, <em>rep</em> və <em>xalq mahnıları</em> kataloqlarımızda mövcuddur. Üzeyir Mehdizadə, Röya, Damla, Pərviz Bülbülə və digər sevilən sənətçilərin ən yeni kliplərini ilk siz izləyin. AZEPRO musiqi dünyasının nəbzini tutur.
+        </p>
+
+        <h2>🎤 Meyxana və Qafiyə Sənəti</h2>
+        <p>
+            Milli folklorumuzun ayrılmaz hissəsi olan Meyxana sevərlər üçün xüsusi bölməmiz var. "De gəlsin", "Pərviz və Türkan", toy meyxanaları və ən son qafiyə deyişmələri burada toplanıb. Köhnə bakı meyxanalarından tutmuş, müasir ritmik meyxanalara qədər geniş bir arxiv təqdim edirik.
+        </p>
+
+        <h2>🎬 Kino və Filmlər</h2>
+        <p>
+            Yerli və xarici filmləri, Azərbaycan dilində dublyaj olunmuş kinoları, ən maraqlı serial fraqmentlərini platformamızda tapa bilərsiniz. Komediya, dram, döyüş və macəra janrında olan videoları axtarış edərək rahatlıqla izləyin.
+        </p>
+
+        <div class="seo-tags">
+            <span class="tag">#AzeProMedia</span>
+            <span class="tag">#VideoYukle</span>
+            <span class="tag">#Mahnilar2026</span>
+            <span class="tag">#TrendVideolar</span>
+            <span class="tag">#Meyxana</span>
+            <span class="tag">#KinoIzle</span>
+            <span class="tag">#Mp3Yukle</span>
+        </div>
+    </section>
 
     <footer class="footer">
-        <div class="socials">
-            <a href="https://www.tiktok.com/@aze_pro_official" class="s-link" target="_blank">TikTok</a>
-            <a href="https://t.me/Aze_Pro_Official" class="s-link" target="_blank">Telegram</a>
-        </div>
-        <div class="time-box" id="saat">...</div>
-        <p style="color:#444; font-size:10px; margin-top:10px;">© 2026 AZEPRO OFFICIAL</p>
+        <p>© 2026 AZEPRO OFFICIAL. Bütün hüquqlar qorunur.</p>
+        <p>Bakı, Azərbaycan | Email: azeproofficial@gmail.com</p>
     </footer>
 
     <div id="screen">
-        <div class="player-head">
-            <div class="close-btn" onclick="bagla()">✕</div>
-        </div>
-        <div class="video-container">
-            <iframe id="frame" src="" allowfullscreen allow="autoplay"></iframe>
-        </div>
-        
-        <div class="dl-area">
-            <h3 style="color:var(--neon-blue); margin:0;">Video Oynadılır</h3>
-            <p style="color:#666; font-size:12px;">Yükləmək üçün seçin:</p>
-            <div class="dl-btns">
-                <a id="d-mp3" href="#" target="_blank" class="dl-btn mp3">🎵 MP3</a>
-                <a id="d-mp4" href="#" target="_blank" class="dl-btn mp4">⬇️ VİDEO</a>
-            </div>
+        <div class="close-btn" onclick="bagla()">×</div>
+        <iframe id="frame" src="" allowfullscreen allow="autoplay"></iframe>
+        <div class="dl-btns">
+            <a id="d-mp3" href="#" target="_blank" class="dl-btn mp3">🎵 MP3 YÜKLƏ</a>
+            <a id="d-mp4" href="#" target="_blank" class="dl-btn mp4">🎬 VİDEO YÜKLƏ</a>
         </div>
     </div>
 
     <script>
-        // --- API KEY (SƏNİN VERDİYİN) ---
         const API = 'AIzaSyB7C2O7EAaR0O5g-s7CKY2xOHjE23WgEWI'; 
 
-        // SAAT
-        setInterval(() => {
-            const now = new Date();
-            document.getElementById('saat').innerText = now.toLocaleDateString('az-AZ') + ' | ' + now.toLocaleTimeString('az-AZ');
-        }, 1000);
-
-        // --- SAYT AÇILANDA (Sitemap Dəstəyi İlə) ---
         window.onload = () => {
-            // URL-dən kateqoriyanı oxuyuruq (Məsələn: ?cat=musiqi)
             const urlParams = new URLSearchParams(window.location.search);
             const cat = urlParams.get('cat');
-
-            if(cat) {
-                // Əgər linkdə kateqoriya varsa, onu aç
-                const btn = document.getElementById('btn-' + cat);
-                if(btn) bolme(cat, btn);
-                else bolme('trend', document.getElementById('btn-trend'));
-            } else {
-                // Yoxdursa Trendləri aç
-                bolme('trend', document.getElementById('btn-trend'));
-            }
+            if(cat) bolme(cat, document.querySelector(`button[onclick="bolme('${cat}', this)"]`));
+            else bolme('trend', document.querySelector('.cat-btn'));
         };
 
-        // --- BÖLMƏ DƏYİŞDİRMƏ ---
         function bolme(tip, btn) {
-            // Düymələri yenilə
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             if(btn) btn.classList.add('active');
 
-            // Sorğuları təyin et
             let q = "";
+            let title = "";
+            
             switch(tip) {
-                case 'trend': q = "Azərbaycan trend musiqi 2026"; break;
-                case 'musiqi': q = "yeni azeri mahnilar 2026"; break;
-                case 'meyxana': q = "yeni meyxana 2026"; break;
-                case 'shorts': q = "tiktok azerbaycan funny"; break;
-                case 'kino': q = "azeri filmler full izle"; break;
-                case 'xeber': q = "azerbaycan son xeberler"; break;
-                default: q = "Azərbaycan trend";
+                case 'trend': q = "Azərbaycan trend musiqi 2026"; title = "Trend Videolar"; break;
+                case 'musiqi': q = "yeni azeri mahnilar 2026"; title = "Ən Yeni Mahnılar"; break;
+                case 'meyxana': q = "yeni meyxana 2026"; title = "Meyxana Aləmi"; break;
+                case 'shorts': q = "tiktok azerbaycan funny"; title = "Shorts Videolar"; break;
+                case 'kino': q = "azeri filmler full izle"; title = "Kino və Filmlər"; break;
+                case 'xeber': q = "azerbaycan son xeberler"; title = "Son Xəbərlər"; break;
             }
+            
+            // SEO: URL və Title Dəyişdirilməsi
+            document.title = `AZEPRO | ${title}`;
+            const newUrl = `${window.location.pathname}?cat=${tip}`;
+            window.history.pushState({path: newUrl}, '', newUrl);
+
             sorgu(q);
         }
 
         function axtar() {
             const val = document.getElementById('inp').value;
-            if(val) sorgu(val);
+            if(val) {
+                document.title = `AZEPRO | Axtarış: ${val}`;
+                sorgu(val);
+            }
         }
 
-        // --- YOUTUBE API SORĞUSU ---
         async function sorgu(q) {
             const list = document.getElementById('list');
-            const load = document.getElementById('loading');
+            list.innerHTML = '<p style="text-align:center; color:var(--neon-blue); padding:20px;">Yüklənir...</p>';
             
-            list.innerHTML = "";
-            load.style.display = "block";
-
             try {
-                const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=14&q=${encodeURIComponent(q)}&type=video&key=${API}`;
-                const req = await fetch(url);
-                const data = await req.json();
-
-                load.style.display = "none";
-
+                const res = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=16&q=${encodeURIComponent(q)}&type=video&key=${API}`);
+                const data = await res.json();
+                
+                list.innerHTML = "";
                 if(data.items) {
                     data.items.forEach(v => {
-                        const vid = v.id.videoId;
-                        const title = v.snippet.title;
-                        const thumb = v.snippet.thumbnails.high.url;
-                        
                         list.innerHTML += `
-                        <div class="card" onclick="play('${vid}')">
-                            <img src="${thumb}" class="thumb">
+                        <div class="card" onclick="play('${v.id.videoId}', '${v.snippet.title.replace(/'/g, "")}')">
+                            <img src="${v.snippet.thumbnails.high.url}" class="thumb" alt="${v.snippet.title}">
                             <div class="info">
-                                <div class="title">${title}</div>
+                                <div class="title">${v.snippet.title}</div>
                             </div>
                         </div>`;
                     });
                 } else {
-                    list.innerHTML = '<p style="text-align:center; width:100%;">Video tapılmadı.</p>';
+                    list.innerHTML = "<p style='text-align:center'>Video tapılmadı.</p>";
                 }
             } catch(e) {
-                load.style.display = "none";
-                list.innerHTML = '<p style="text-align:center; color:red;">Xəta: İnternet və ya API limiti.</p>';
+                list.innerHTML = "<p style='text-align:center; color:red'>Xəta baş verdi.</p>";
             }
         }
 
-        // --- PLAYER ---
-        function play(id) {
+        function play(id, title) {
             const screen = document.getElementById('screen');
             const iframe = document.getElementById('frame');
             
-            iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
-            
-            // Yükləmə linkləri
+            iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
             document.getElementById('d-mp3').href = `https://y2mate.is/watch?v=${id}`;
             document.getElementById('d-mp4').href = `https://ssyoutube.com/watch?v=${id}`;
             
@@ -310,10 +256,8 @@
         }
 
         function bagla() {
-            const screen = document.getElementById('screen');
-            const iframe = document.getElementById('frame');
-            screen.style.display = 'none';
-            iframe.src = "";
+            document.getElementById('screen').style.display = 'none';
+            document.getElementById('frame').src = "";
         }
     </script>
 </body>
