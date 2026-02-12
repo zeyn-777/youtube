@@ -1,0 +1,9 @@
+async function handleLike(videoId) {
+    const response = await fetch('http://localhost:3000/api/videos/like', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videoId, userId: currentUser.id })
+    });
+    const result = await response.json();
+    document.getElementById('like-count').innerText = result.likes;
+}
