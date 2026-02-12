@@ -1,0 +1,36 @@
+:root {
+    --bg-main: #0f0f0f;
+    --bg-card: #1e1e1e;
+    --accent: #ff0000;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: #fff;
+    /* Glassmorphism effekti üçün */
+}
+
+.video-card {
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--bg-card);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+}
+
+/* Online status indicator */
+#user-count-badge {
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
