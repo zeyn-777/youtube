@@ -1,36 +1,51 @@
-:root {
-    --bg-main: #0f0f0f;
-    --bg-card: #1e1e1e;
-    --accent: #ff0000;
-    --glass: rgba(255, 255, 255, 0.05);
+/* Glassmorphism Header */
+.glass-header {
+    background: rgba(32, 32, 32, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
 }
 
-body {
-    background-color: var(--bg-main);
-    color: #fff;
-    /* Glassmorphism effekti üçün */
-}
-
-.video-card {
-    border-radius: 15px;
-    overflow: hidden;
-    background: var(--bg-card);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid transparent;
-}
-
-.video-card:hover {
-    transform: scale(1.05);
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
-}
-
-/* Online status indicator */
-#user-count-badge {
-    background: rgba(0, 255, 0, 0.2);
+/* Online Badge Style */
+#online-badge {
+    background: rgba(0, 255, 0, 0.1);
     color: #00ff00;
-    padding: 5px 12px;
+    padding: 5px 15px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(0, 255, 0, 0.2);
 }
 
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.btn-register {
+    background: #ff0000;
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
